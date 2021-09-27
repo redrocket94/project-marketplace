@@ -5,6 +5,10 @@ on:
     paths:
       - "**.sol"
       - ".github/workflows/slither.yml"
+  pull_request:
+    paths:
+      - "**.sol"
+      - ".github/workflows/slither.yml"
 
 jobs:
   build:
