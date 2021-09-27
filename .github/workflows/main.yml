@@ -57,7 +57,7 @@ jobs:
       - name: Check status
         shell: bash
         run: |
-          FALSE_POSITIVE_WARNINGS=7
+          FALSE_POSITIVE_WARNINGS=15
           FOUND_WARNINGS=`grep "\d+ result" -Po CI/slither-output/slither_report.txt | sed 's/ result//g'`
           echo "Slither has found $FOUND_WARNINGS issues"
           if [[ $FOUND_WARNINGS -gt $FALSE_POSITIVE_WARNINGS ]]; then echo "$FOUND_WARNINGS issues exceeds limit" >&2; exit 1; fi
