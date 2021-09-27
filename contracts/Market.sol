@@ -37,6 +37,7 @@ contract Market is Ownable {
 
     function listItem(uint256 id, uint256 price) public view {
         require(msg.sender == _mockNFT.ownerOf(id), "User does not own NFT");
+        _mockNFT.transferFrom(msg.sender, owner(), id);
     }
 
     function setMockNFTAddr(address mockNFTAddr) public onlyOwner {
